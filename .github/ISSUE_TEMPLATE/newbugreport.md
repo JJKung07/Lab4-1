@@ -1,9 +1,63 @@
 ---
 name: NewBugReport
+description : File a bug report
 about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
+title: "Bug: "
+labels: ["bug","triage"]
+projects: ["octo-org/1","octo-org/44"]
+assignees: 
+    - octocat
+body:
+    - type: markdown
+      atributes:
+        value: |
+            Thank for talking the time to fill out this bug report!
+    - type: input
+      id: contact
+    attributes:
+        label: Contact Details
+        descrition: How can we get in touch with you if we need more info?
+        placeholder: ex. email@example.com
+    validations:
+        required: false
+    - type: textarea
+      id: what-happend
+    attributes: 
+        label: What happened?
+        description: Also tell us, what did you expect to happen?
+        placeholder: Tell us what you see!
+        value: "A bug happened!"
+    validations:
+        required: true
+    - type: dropdown
+      id: version
+      attributes: 
+        label: Version
+        description: What version of our software are you running?
+    options:
+        - 1.0.2 (Defualt)
+        - 1.0.3 (Edge)
+    default: 0
+    validations:
+        required: true
+    - type: dropdown
+      -id: browsers
+    attributes:
+       label: What browsers are you seeing the problem on?
+       multiple: true
+       options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+    - type: textarea
+      id: terms
+      attributes:
+        lable: Code of Conduct
+        description: By submitting this issue, you agree to follow our [Code of Conduct] (https://example.com)
+        options: 
+          - label: I agree to follow this project's Code of Conduct
+            required: true
 
 ---
 
